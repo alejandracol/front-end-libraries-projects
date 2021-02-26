@@ -1,0 +1,33 @@
+//Contemporary and Bold Palette
+
+$main-color: #6F2232;
+$background-color: #C5C6C7;
+
+.home {
+    background-color: $background-color;
+
+    .card {
+        background-color: $main-color;
+    }
+
+    .rotate {
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        letter-spacing: 2px;
+    }
+    
+    .prj:hover {
+        figure {
+            background: $main-color;
+        }
+        img {
+            filter: brightness(0) invert(100%)
+        }
+        h5 {
+            color: $main-color;
+        }
+    }
+}
+
+
+

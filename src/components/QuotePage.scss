@@ -1,0 +1,77 @@
+//Blue and Refreshing, Sleek and Futuristic, Striking and Simple, Contemporary and Bold Palettes
+
+$themes:
+    "0" #464866,
+    "1" #116466,
+    "2" #1F2833,
+    "3" #6F2232;
+
+.quote {
+    transition: all 1s;
+
+    .card {
+        position: relative;
+        max-width: 500px;
+        width: 100%;
+
+        img {
+            width: 6rem;
+            height: 6rem;
+        }
+    }
+
+    .card::before, .card::after {
+        content: "";
+        position: absolute;
+        top: -1rem;
+        bottom: -1rem;
+        width: 0;
+        z-index: 5;
+    }
+    
+    .card::before {
+        left: -1rem;
+    }
+    
+    .card::after {
+        right: -1rem;
+    }
+    
+    .curtin::before, .curtin::after {
+        animation: curtin 2s ease-in-out;
+        transition: background-color 1s;
+    }
+}
+
+@keyframes curtin {
+    50% {
+        width: calc(50% + 1.5rem);
+    }
+}
+
+@each $key, $theme in $themes {
+    .card-#{$key} {
+        background-color: $theme;
+
+        .card { 
+        
+            #tweet-quote, #new-quote {
+                background-color: $theme;
+                border-color: $theme;
+            }
+
+            #tweet-quote:hover, #new-quote:hover {
+                background-color: darken($theme, 5%);
+                border-color: darken($theme, 5%);
+            }
+        } 
+
+        .card::before, .card::after {
+            background-color: $theme;
+        }
+    }
+}
+
+
+
+
