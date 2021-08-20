@@ -113,5 +113,5 @@ And here. | Okay. | I think we get it.
 1. Use just 1s if you want!
 1. And last but not least, let's not forget embedded images:
 
-![alejandracol logo](https://github.com/alejandracol/portafolio-web/blob/master/logo.jpg?raw=true)
+![alejandracol logo](https://github.com/alejandracol/front-end-libraries-projects/blob/main/src/multimedia/logo.jpg?raw=true)
 `;
