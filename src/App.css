@@ -1,0 +1,25 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0.7rem;
+  min-width: 20rem;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.4); 
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.4);
+}
+
+
+
+
+
+

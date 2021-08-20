@@ -1,0 +1,34 @@
+$breakpoints:
+  "extra large" 1200px 100%,
+  "large" 992px 95%,
+  "medium" 768px 90%,
+  "small" 576px 85%;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+@each $key, $breakpoint, $fontSize in $breakpoints  {
+  @media (max-width: $breakpoint), (max-height: $breakpoint) {
+    html {
+      font-size: $fontSize;
+    }
+  }
+}
+
+
+

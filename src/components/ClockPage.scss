@@ -1,0 +1,159 @@
+// Intrepid and Fearless Pallete
+
+$main-color: #C96567;
+$complementary-color: #314455;
+$background-color: #97AAB2;
+$auxiliary-color: #e3e2df;
+$min-dimension: 18rem;
+
+.clock {
+    background-color: $background-color;
+    
+    .container {
+        height: calc(min(50vh, 50vw));
+        width: calc(min(50vh, 50vw));
+        min-height: $min-dimension;
+        min-width: $min-dimension;
+        border-radius: 50%;
+        border: 1rem solid $main-color;
+        background-color: $auxiliary-color;
+        box-shadow: 0 -1rem darken($main-color, 10%);
+        text-transform: capitalize;
+        z-index: 10;
+
+        .col {
+            min-width: $min-dimension / 2;
+        }
+
+        .length-value {
+            display: inline;
+            margin: 0.5rem;
+        }
+
+        button {
+            padding: 0.25rem 0.5rem;
+            border: none;
+            outline: none;
+            background-color: inherit;
+        }
+
+        button:hover:enabled {
+            color: $complementary-color;
+        }
+
+        .output {
+            background-color: darken($auxiliary-color, 5%);
+            box-shadow: darken($auxiliary-color, 10%) 2px 2px 5px 1px inset, darken($auxiliary-color, 10%) -2px -2px 5px 1px inset;
+        }
+    }
+
+    footer {
+        a {
+            font-weight: 500;
+            color: inherit;
+        }
+    }
+
+    .top-elements-clock {
+        margin-top: calc(-1 * max(3rem, min(8.5vh, 8.5vw)));
+        height: calc(max(6rem, min(17vh, 17vw)));
+    }
+
+    .bottom-elements-clock {
+        margin-top: calc(-1 * max(1.8rem, min(5vh, 5vw)));
+        height: calc(max(3.6rem, min(10vh, 10vw)));
+    }
+
+    .top-elements-clock, .bottom-elements-clock {
+        position: relative;
+        width: calc(min(50vh, 50vw));
+        min-width: $min-dimension;
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+
+        .bell-1, .bell-2 {
+            height: 100%;
+            width: 33%;
+            clip-path: ellipse(50.0% 40.0% at 50% 100%);
+            background-color: $complementary-color;
+            z-index: 30;
+        }
+
+        .bell-1::before, .bell-2::before {
+            content: "";
+            position: absolute;
+            bottom: -5%;
+            height: 10%;
+            width: 100%;
+            clip-path: ellipse(50.0% 50.0% at 50.0% 50.0%);
+            background-color: darken($complementary-color, 10%);
+        }
+
+        .antenna {
+            margin-bottom: -20%;
+            height: 100%;
+            width: 12%;
+            clip-path: polygon(0 0, 100% 0, 100% 8%, 60% 8%, 60% 100%, 40% 100%, 40% 8%, 0 8%);
+            background-color: darken($main-color, 10%);
+        }
+
+        .foot-1, .foot-2 {
+            height: 100%;
+            width: 8%;
+            border-radius: 1rem;
+            background-color: $complementary-color;           
+        }
+
+        .bell-1, .foot-2 {
+            transform: rotate(-20deg);
+        }
+        
+        .bell-2, .foot-1 {
+            transform: rotate(20deg);
+        }
+
+        .bell-1-animation { animation: 120ms 90ms infinite bell-1; }
+
+        .bell-2-animation { animation: 120ms 30ms infinite bell-2; }
+
+        .antenna-animation { animation: 120ms infinite antenna; }
+
+        @keyframes bell-1 {
+            25% { transform: rotate(-15deg); }
+            75% { transform: rotate(-25deg); }
+        }
+
+        @keyframes bell-2 {
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(25deg); }
+        }
+
+        @keyframes antenna { 
+            25% { transform: rotate(15deg); }
+            75% { transform: rotate(-15deg); }
+        }
+    }
+
+    .top-elements-clock::before, .top-elements-clock:after {
+        content: "";
+        position: absolute;
+        bottom: -12%;
+        height: 58%;
+        width: 2%;
+        border-radius: 1rem;
+        background-color: darken($complementary-color, 10%);
+        z-index: 20;
+    }
+
+    .top-elements-clock::before {
+        margin-right: calc(max(52%, 4.5rem));
+        transform: rotate(-20deg);
+    }
+
+    .top-elements-clock::after {
+        margin-left: calc(max(52%, 4.5rem));
+        transform: rotate(20deg);
+    }
+}
+

@@ -1,0 +1,56 @@
+//Striking and Simple Palette
+
+$background-color: #1F2833;
+$border-color: #C5C6C7;
+$internal-dimension: 2.25rem;
+$margins: 1rem;
+
+.calculator {
+    background-color: $background-color;
+
+    .card {
+        padding: $margins;
+        width: $internal-dimension * 8;
+
+        .card-img-top, .card-img-overlay {
+            height: $internal-dimension * 4;
+        }
+
+        .card-img-overlay {
+            margin: $margins;
+            text-align: right;
+            border: 1px solid $border-color; 
+
+            #record {
+                height: $internal-dimension * 2; 
+                word-break: break-all;
+                overflow: auto;
+            }
+
+            #display {
+                margin-top: $margins / 2;
+                height: $internal-dimension * 0.8;
+                line-height: $internal-dimension;
+                white-space: nowrap;
+                overflow-y: hidden;
+                overflow-x: auto;
+            }
+        }
+
+        .card-body {
+            padding: 0;
+
+            .btn-group {
+                margin-top: $margins / 2;
+                margin-left: -$margins / 4;
+                margin-right: -$margins / 4;
+                              
+                .btn {
+                    margin: $margins / 4;
+                    width: $internal-dimension * 1.5;
+                    height: $internal-dimension;
+                }
+            }
+        }
+    }
+}
